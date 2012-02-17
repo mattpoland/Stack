@@ -1,0 +1,56 @@
+Stack
+Designing with the Uniform Interface Assignment
+Matt Poland
+INLS 490-188 (Ryan Shaw)
+
+1) Data
+
+This service deals with music resources, the primary unit of information being the album. Rather than addressing the albums by their name, which can be messy, of variable length and eponymous with the artist's name (such as, The Velvet Underground's album "The Velvet Underground"), this service will identify albums by using Allmusic's album ID. In the example mentioned above, the album "The Velvet Underground" will be addressed "/5753". 
+
+Most music albums are structured by tracks - in this service, individual album tracks will also be addressable so as to enable users to access an individual track resource by its number. So, a user looking to access the resource "Candy Says" would access it at "/5753/01".  
+
+Types of albums include the genre to which they belong, an artist's catalogue, and whether they are LP or EP length. Users would want to find information about individual albums such as the artist who made them, when they were released, names of tracks, genre, similarity to other albums, and so on. As will be shown below, these pieces of information will be queryable but not addressed in this system so as to keep its architecture straightforward.
+
+2) List your resources
+
+-	Albums by Allmusic ID number 
+-	Tracks by number
+-	Time position as a fragment of the track resource (#1m24s, for example)
+
+3) Name Your Resources
+
+/ - root
+/{album-id}
+/{album-id}/{track-number} 
+/{album-id}/{track-number}#{time}
+/find?name={album-name}
+/find?artist-name={artist-name}
+/find?artist-album-type={artist-name} AND {ep} OR {lp}
+/find?year={year}
+/find?artist-year= {artist-name} AND {year}
+/find?genre={album-id}
+/find?like={album-name}
+
+4 and 5) Methods and Representations
+
+-	/ - root supports GET, which returns a lists of all albums, or the message "No albums have been created". In both cases the HTTP status code is 200 OK. POST creates a new album resource and returns a 201 Created status code.
+ 
+-	/{album-id} – supports GET, which retrieves a representation of the album indexed by Allmusic ID number, which includes name, artist name, year, genre, tracks, similar albums, EP or LP. For the purposes of supporting a query for artist name (/find?artist-name={artist-name}), multiple artists (on a compilation album, for example) are listed individually in the representation. Supports PUT, which updates representation of album. Supports DELETE, which deletes an album resource. In all of these cases, a status code of 200 OK is returned. In the case of a request for an album that has not yet been added to the resources, a status of 400 Bad Request is returned.  For POST, a status message of 405 Method Not Allowed is returned.
+
+-	/{album-id}/t{track-number} – supports GET, which retrieves the a representation of the given track number on an album (01-x). For tracks that do not exist or that have not been created, a status of 400 Bad Request is returned. For POST, PUT and DELETE, a status code of 405 Method Not Allowed is returned.
+
+-	/{album-id}/{track-number}#{time} - Supports GET, a way to index into tracks by time (m,sec) so users can go to a specific moment in an audio representation, which returns a status message of 200 OK. For times that are beyond the bounds of the track or tracks that do not exist or that have not been created, a status of 400 Bad Request is returned. For POST, PUT and DELETE, a status code of 405 Method Not Allowed is returned.
+
+-	/find?name={album-name} - Supports GET, a way to query by name of album, which when successful returns a representation listing matching album names (or a message saying "No such album") and status message of 200 OK. For albums that do not exist or that have not been created, a status of 400 Bad Request is returned. For POST, PUT and DELETE, a status code of 405 Method Not Allowed is returned.
+
+-	/find?artist-name={artist-name} – Supports GET, a way to query by name of the artist, which when successful returns a representation listing of albums or tracks which correspond to the artist or a message saying "No such artist" , regardless returning a status message of 200 OK. For artists that do not exist or that have not been created, a status of 400 Bad Request is returned. For POST, PUT and DELETE, a status code of 405 Method Not Allowed is returned.
+
+-	/find?artist-album-type={artist-name} AND {ep} OR {lp} – Supports GET, a way of querying for albums by a specific artist that are Extended Play (EP) or Long Play (LP). A successful query returns a representation of an artist's EPs or LPs; an unsuccessful one a message saying "No EPs found" or "No LPs found" - all of the above with a status code of 200 OK. For artists that do not exist or have not been created, a status of 400 Bad Request is returned. For POST, PUT and DELETE, a status code of 405 Method Not Allowed is returned.
+
+-	/find?year={year} – Supports GET, a way of querying for albums released in a given year (yyyy), which when successful returns a representation listing albums released in a given year (or a message saying "No albums released that year") and a status message of 200 OK. For years before the invention of sound recording or nonsensical years, a status of 400 Bad Request is returned. For POST, PUT and DELETE, a status code of 405 Method Not Allowed is returned.
+
+-	/find?artist-year= {artist-name} AND {year} – Supports GET, a way of querying for albums by artist a released in given year (yyyy), which when successful returns a representation listing albums an artist released in that year (or a message saying "{artist-name} did not release any albums that year") and a status message of 200 OK. For artists or years that do not exist or that have not been created, a status of 400 Bad Request is returned. For POST, PUT and DELETE, a status code of 405 Method Not Allowed is returned.
+
+-	/find?genre={album-id} - Supports GET, a way of querying specifically for an album's genre, which when successful returns a representation of the album's genre (e.g., "chillwave") or, for albums with no genres represented, a message saying "No genre found" - both with a status message of 200 OK. For albums that do not exist or have not been created, a status of 400 Bad Request is returned. For POST, PUT and DELETE, a status code of 405 Method Not Allowed is returned.
+
+-	/find?like={album-name} – Supports GET, a way of querying for albums like a given album name based on features of the album's representation, like genre and/or similar albums listed in a given album representation. When successful, the query returns a representation listing albums like the given album, or for albums with no similar albums and/or genre, a message saying "No similar albums found". Successful and unsuccessful queries return a status message of 200 OK. For albums that do not exist or have not been created, a status of 400 Bad Request is returned. For POST, PUT and DELETE, a status code of 405 Method Not Allowed is returned.
