@@ -18,6 +18,8 @@ Applied to a `div` tag, specifically on the representation of `stacks.html`. Con
 Applied to a `ul` tag. Contains the numerical value of the Allmusic Album ID number for a given album in the stacks.
 * `"x"` (Track number - numerical value)  
 Applied to a `span` element if `class="track"`. The value for the track number of a track on a given album.
+* `audio`  
+Applied to a `div` tag. Contains the audio representation for a given track.
 
 **Class attribute values**
 
@@ -42,7 +44,13 @@ Applied to a `div` tag. Contains information about other album resources that ar
 * `tracklist`  
 Applied to a `div` tag. A component of the `album div`, the `tracklist div` contains all track listing for the album being represented.
 * `track`  
-Applied to a `span` tag. A component of the `tracklist div` that contains information about and a link to a track on the album being represented.
+Applied to a `span` tag or a `div` tag. In the case of the `span` tag, it contains information about and a link to a track on the album being represented. In the case of the the `div` tag, it only contains information about the track.
+* `results`  
+Applied to a `div` tag. Contains the part of a representation that is made up of results from a query. 
+* `nav`  
+Applied to a `div` tag. Contains the part of the representation that references other global navigation representations in the application.
+* `total`
+Applied to a `span` tag. Contains the total number of tracks on a given album. 
 
 **Name attribute values**
 
@@ -54,11 +62,12 @@ Applied to an `input` tag within a `form` element. Specifies that the value bein
 **Rel attribute values**
 
 * `search`  
-Applied to an `a` tag. A reference to the search representation.
+Applied to an `A` tag. A reference to the search representation.
 * `album`  
-Applied to an `a` tag. A reference to an album representation.
+Applied to an `A` tag. A reference to an album representation.
 * `similar`  
-Applied to an `a` tag. A reference to a representation of albums similar to a given album representation. Usually within the `span class="similar"`.
+Applied to an `A` tag. A reference to a representation of albums similar to a given album representation. Usually within the `span class="similar"`.
 * `track`  
-Applied to an `a` tag. A reference to a representation of an album track.
-
+Applied to an `A` tag. A reference to a representation of an album track.
+* `audio`  
+Applied to an `A` tag. A reference to a track's audio representation.

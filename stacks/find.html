@@ -10,25 +10,70 @@
 <h3>Search the stacks by:</h3>
 	
 	<div id="search">
-	<!-- search by Album ID -->	
-		<form method="GET" action="find?album-ID=">
-			Album ID: <input type="text" name="album-ID"><br/>
+	<!-- search by Album name -->
+		<p>
+		<form method="GET" action="find">
+			Album name: <input type="text" name="album-name"/><br/>
 			<input type="button" value="submit" />
 		</form>
-
-		<br/>
+		</p>
+		
+		<p>
 	<!-- search by artist name -->	
-		<form method="GET" action="find?artist-name=">
-			Artist Name: <input type="text" name="artist-name"><br/>
+		<form method="GET" action="find">
+			Artist name: <input type="text" name="artist-name"/><br/>
 			<input type="button" value="submit" />
 		</form>	
+		</p>
 		
+		<p>
 	<!-- search by Album Type-->
+		<form method="GET" action="find">
+			Artist name: <input type="text" name="artist-name"/><br/>
+			Album type (EP or LP): <input type="text" name="ep|lp"/><br/>
+			<input type="button" value="submit" />
+		</form>
+		</p>
+		
+		<p>
 	<!-- search by year -->
+		<form method="GET" action="find">
+			Year released: <input type="text" name="year"/><br/>
+			<input type="button" value="submit" />
+		</form>
+		</p>
+		
+		<p>
 	<!-- search by Artist name AND year -->	
+		<form method="GET" action="find">
+			Artist name: <input type="text" name="album-type"/><br/>
+			Year released: <input type="text" name="year"/><br/>
+			<input type="button" value="submit" />
+		</form>	
+		</p>
+		
+		<p>
 	<!-- search by Genre -->
+		<form method="GET" action="find">
+			Albums by genre: <input type="text" name="genre"/><br/>
+			<input type="button" value="submit" />
+		</form>
+		</p>
+		
+		<p>
 	<!-- search by Similar albums -->
+		<form method="GET" action="find">
+			Albums similar to (enter Allmusic album ID): <input type="text" name="like" /><br/>
+			<input type="button" value="submit" />
+		</form>
+		</p>
 	
+	</div>
+	
+	<div class="nav">
+	<p>
+		<a href="stacks.html" rel="index">Stacks Home</a>
+	</p>
 	</div>
 	
 </div>	
