@@ -2,8 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>currentDocument</key>
-	<string>readme.txt</string>
 	<key>documents</key>
 	<array>
 		<dict>
@@ -310,13 +308,8 @@
 	<array>
 		<string>stacks.html</string>
 		<string>find.html</string>
-		<string>readme.txt</string>
-		<string>find?album-name=psychocandy.html</string>
-		<string>find?artist-name=slowdive.html</string>
 		<string>find?artist-name=slowdive&amp;ep|lp=lp.html</string>
-		<string>find?year=1985.html</string>
 		<string>find?artist-name=slowdive&amp;year=1993.html</string>
-		<string>find?like=10349.html</string>
 		<string>10349.html</string>
 		<string>191561.html</string>
 	</array>
