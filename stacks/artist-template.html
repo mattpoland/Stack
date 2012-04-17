@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<head>
+	<title></title>
+</head>
+
+<body>
+<div itemscope itemtype="http://schema.org/MusicGroup" class="artist-info">
+<h2 itemprop="name"><span class="artist-name"> </span></h2>
+<img itemprop="image" src="" alt="">
+<p>Formed:</p> 
+	<ul>
+		<li>Year: <span itemprop="foundingDate" class="year-formed"></span></li>
+		<li>Location: <span itemprop="location" class="location-formed"></span></li>
+	</ul>		
+<p>Disbanded: <span class="year-disbanded <!-- OR "active" --> "> </span></p> <!-- How could I extend MusicGroup to have an itemprop for this? -->	
+<p>Members: <p>
+	<ul>
+		<li><span itemprop="musicGroupMember" class="members"> <!--Band Member(s) --> </span> (<span class="instrument" itemprop="musicGroupMember/"></span>)</li>
+	</ul>	
+<div class="albums-by-artist">	
+<p>Albums (in Stacks only): <p>
+	<ul>
+		<li><a href=".html" rel="album"> <span itemprop="albums" class="album-name" alt=""> <!-- Album --> </span></a></li>
+	</ul>	
+</div>
+</div>
+<p>
+	<a href="stacks.html" rel="index">Stacks Home</a>
+	 | 
+	<a href="find.html" rel="search">Search through the stacks</a>
+</p>		
+</body>	
+</html>

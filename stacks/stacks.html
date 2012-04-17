@@ -6,39 +6,48 @@
 </head>
 
 <body>
-<h2>Stacks</h2>
-
-<div id="all-albums">
-<p>All Albums:</p>
-
-<ul>
-	<li>
-	<a href="10349.html" rel="album">	
-		Psychocandy - The Jesus and Mary Chain
-	</a>	
-	</li>
-	
-	<li>
-	<a href="191561.html" rel="album">	
-		Souvlaki - Slowdive
-	</a>	
-	</li>	
-</ul>		
-</div>
-
+<div itemscope itemtype="WebPage">
+<h1>Stacks</h1>
+<img src="files/rekkids.jpeg" itemprop="primaryImageOfPage" alt="Rekkids">
+<div itemprop="mainContentOfPage">
 <div class="nav">
-<p>
+	<h3>
+		<strong>
+		<a href="all-albums.html">
+		All Albums
+		</a>
+		</strong>
+	</h3>
+<h3>
+	<strong>
+	<a href="all-artists.html">
+	All Artistes
+	</a>
+	</strong>
+</h3>
+<h3>
+	<strong>
 	<a href="find.html" rel="search">
 	Search through the stacks
 	</a>
-</p>
+	</strong>
+</h3>
 </div>
 
-<div id="add-album">
-<h3>Add an Album:</h3>
+<div id="add-resources">
+<p><strong>Add an Album:</strong>
 <form method="post" action="/stacks/">
-	Allmusic Album ID: <input type="text" name="album-id"><br/>
+	<a href="http://www.allmusic.com" alt="AllMusic">Allmusic</a> Album ID: <input type="text" name="album-id"><br/>
 	<input type="button" value="Submit" />
+</p>
+<p>	
+	<strong>Add an Artist</strong>:<br/><br/>
+<form method="post" action="/stacks/">
+	<a href="http://www.allmusic.com" alt="AllMusic">Allmusic</a> Artist ID: <input type="text" name="artist-id"><br/>
+	<input type="button" value="Submit" />
+</p>		
+</div>
+</div>
 </div>
 </body>
 </html>
