@@ -12,19 +12,31 @@
 		<li>Year: <span itemprop="foundingDate" class="year-formed">1989</span></li>
 		<li>Location: <span itemprop="location" class="location-formed">Reading, England, UK</span></li>
 	</ul>		
-<p>Disbanded: <span class="year-disbanded">1995</span></p> <!-- How could I extend MusicGroup to have an itemprop for this? -->	
+<p>Disbanded: <span itemprop="yearDisbanded">1995</span></p>	
 <p>Members: <p>
 	<ul>
-		<li><span itemprop="musicGroupMember" class="members">Neil Halstead</span> (<span class="instrument" itemprop="musicGroupMember/vocals">vocals</span>, <span class="instrument" itemprop="musicGroupMember/guitar">guitar</span>)</li>
-		<li><span itemprop="musicGroupMember" class="members">Rachel Goswell</span> (<span class="instrument" itemprop="musicGroupMember/vocals">vocals</span>, <span class="instrument" itemprop="musicGroupMember/guitar">guitar</span>)</li>
-		<li><span itemprop="musicGroupMember" class="members">Christian Savill</span> (<span class="instrument" itemprop="musicGroupMember/guitar">guitar</span>)</li>
-		<li><span itemprop="musicGroupMember" class="members">Adrian Sell</span> (<span class="instrument" itemprop="musicGroupMember/drums">drums</span>)</li>
-		<li><span itemprop="musicGroupMember" class="members">Nick Chaplin</span> (<span class="instrument" itemprop="musicGroupMember/bass">bass</span>)</li>
+		<div itemprop="musicGroupMember/vocalsguitar" itemscope itemtype="http://schema.org/Person">
+		<li><span class="members">Neil Halstead</span> (<span class="instrument">vocals</span>, <span class="instrument">guitar</span>)</li>
+		</div>
+		<div itemprop="musicGroupMember/vocalsguitar" itemscope itemtype="http://schema.org/Person">
+		<li><span itemprop="musicGroupMember" class="members">Rachel Goswell</span> (<span class="instrument">vocals</span>, <span class="instrument">guitar</span>)</li>
+		</div>
+		<div itemprop="musicGroupMember/guitar" itemscope itemtype="http://schema.org/Person">
+		<li><span class="members">Christian Savill</span> (<span class="instrument">guitar</span>)</li>
+		</div>
+		<div itemprop="musicGroupMember/drums" itemscope itemtype="http://schema.org/Person">
+		<li><span class="members">Adrian Sell</span> (<span class="instrument">drums</span>)</li>
+		</div>
+		<div itemprop="musicGroupMember/bass" itemscope itemtype="http://schema.org/Person">
+		<li><span class="members">Nick Chaplin</span> (<span class="instrument">bass</span>)</li>
+		</div>
 	</ul>	
 <div class="albums-by-artist">	
 <p>Albums (in Stacks only): <p>
 	<ul>
-		<li><a href="191561.html" rel="album" alt="Souvlaki - Slowdive"><span itemprop="albums" class="album-name">Souvlaki</span></a></li>
+		<div itemprop="albums" itemscope itemtype="http://schema.org/MusicAlbum">
+		<li><a href="191561.html" rel="album" alt="Souvlaki - Slowdive"><span class="album-name">Souvlaki</span></a></li>
+		</div>
 	</ul>	
 </div>
 </div>

@@ -12,17 +12,25 @@
 		<li>Year: <span itemprop="foundingDate" class="year-formed">1987</span></li>
 		<li>Location: <span itemprop="location" class="location-formed">Leeds, England, UK</span></li>
 	</ul>		
-<p>Disbanded: <span class="year-disbanded">1994</span></p> <!-- How could I extend MusicGroup to have an itemprop for this? -->	
+<p>Disbanded: <span itemprop="yearDisbanded">1994</span></p>	
 <p>Members: <p>
 	<ul>
-		<li><span itemprop="musicGroupMember" class="members">Ian Masters</span> (<span class="instrument" itemprop="musicGroupMember/bass">bass</span>, <span class="instrument" itemprop="musicGroupMember/vocals">vocals</span>)</li>
-		<li><span itemprop="musicGroupMember" class="members">Chris Cooper</span> (<span class="instrument" itemprop="musicGroupMember/drums">drums</span>)</li>
-		<li><span itemprop="musicGroupMember" class="members">Graeme Naysmith</span> (<span class="instrument" itemprop="musicGroupMember/guitar">guitar</span>)</li>
+		<div itemprop="musicGroupMember/bassvocals" itemscope itemtype="http://schema.org/Person">
+		<li><span itemprop="musicGroupMember" class="members">Ian Masters</span> (<span class="instrument">bass</span>, <span class="instrument">vocals</span>)</li>
+		</div>
+		<div itemprop="musicGroupMember/drums" itemscope itemtype="http://schema.org/Person">
+		<li><span class="members">Chris Cooper</span> (<span class="instrument">drums</span>)</li>
+		</div>
+		<div itemprop="musicGroupMember/guitar" itemscope itemtype="http://schema.org/Person">
+		<li><span class="members">Graeme Naysmith</span> (<span class="instrument">guitar</span>)</li>
+		</div>
 	</ul>	
 <div class="albums-by-artist">	
 <p>Albums (in Stacks only): <p>
 	<ul>
-		<li><a href="14775.html" rel="album"> <span itemprop="albums" class="album-name" alt="The Comforts of Madness - Pale Saints"></span>The Comforts of Madness</a></li>
+		<div itemprop="albums" itemscope itemtype="http://schema.org/MusicAlbum">
+		<li><a href="14775.html" rel="album"> <span class="album-name" alt="The Comforts of Madness - Pale Saints"></span>The Comforts of Madness</a></li>
+		</div>
 	</ul>	
 </div>
 </div>
