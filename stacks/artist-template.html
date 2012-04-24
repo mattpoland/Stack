@@ -12,10 +12,17 @@
 		<li>Year: <span itemprop="foundingDate" class="year-formed"></span></li>
 		<li>Location: <span itemprop="location" class="location-formed"></span></li>
 	</ul>		
-<p>Disbanded: <span class="year-disbanded <!-- OR "active" --> "> </span></p> <!-- How could I extend MusicGroup to have an itemprop for this? -->	
+<p>Disbanded: <span itemprop="yearDisbanded"></span></p>
 <p>Members: <p>
 	<ul>
-		<li><span itemprop="musicGroupMember" class="members"> <!--Band Member(s) --> </span> (<span class="instrument" itemprop="musicGroupMember/"></span>)</li>
+		<div itemprop="musicGroupMember" itemscope itemtype="http://schema.org/Person">
+			<!-- adding /instrument will imply musicGroupMember -->
+		<li><span class="member"></span> (<span class="instrument"></span>)</li>
+		</div>
+		<div itemprop="musicGroupMember" itemscope itemtype="http://schema.org/Person">
+			<!-- adding /instrument will imply musicGroupMember -->
+		<li><span class="member"></span> (<span class="instrument"></span>)</li>
+		</div>
 	</ul>	
 <div class="albums-by-artist">	
 <p>Albums (in Stacks only): <p>
