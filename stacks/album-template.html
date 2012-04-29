@@ -10,91 +10,46 @@
 <div class="album">
 	<ul id="2122056">
 		<li>Album Name: <span itemprop="name" class="album-name"> </span></li> 
-		<li>Artist Name: <span itemprop="byArtist" class="artist-name"> </span></li>
+	<div itemscope itemtype="http://www.schema.org/MusicGroup">
+		<li>Artist Name: <span itemprop="name" class="artist-name"> </span></li>
+	</div>
  		<li>Allmusic Album ID: <span itemprop="MusicAlbum/allmusicid" class="album-id"></span></li>
 		<li>Year Released: <span itemprop="datePublished" class="year"></span></li>
-		<li>Type: <span itemprop="MusicAlbum/lp" class="ep|lp">LP</span></li> <!-- or itemprop="MusicAlbum/ep" depending on type -->
-<!-- PICK UP MICRODATA TAGS HERE -->		
+		<li>Type: <span itemprop="MusicAlbum/lp" class="ep|lp">LP</span></li> <!-- or itemprop="MusicAlbum/ep" depending on type -->		
 		<li>Genre: 
 			<div class="genre">
-				<span class="genre">new-gaze</span>,
-				<span class="genre">indie-rock</span>,
-				<span class="genre">alt-country-gaze-pop</span>,
+				<span itemprop="genre" class="genre"></span>
 			</div>
 		</li>
 		<li>Similar albums:
 			<div class="similar">
-				<span class="similar">
-				<a href="2385099.html" rel="similar">
-				Kill For Love - Chromatics
-				</a>
-				</span>		
+				<a href=".html" rel="similar">
+				<span itemprop="MusicAlbum/similar" class="similar">
+				</span>
+				</a>			
 			</div>
 		</li>
+	</ul>
 </div>	
 <div class="tracklist">
-		<p>Track Listing:</p><!-- Track numbers need to be addressable. --> 
+		<p>Track Listing:</p>
 			<ol>
+			<div itemprop="tracks" itemscope itemtype="http://www.schema.org/MusicRecording">	
 				<li>
-				<span class="track" id="1">
-				Two Small Deaths	
+				<span itemprop="name" class="track" id=""> <!-- id is track number -->
+	
 				</span>	
 				</li>
-				
-				<li> 
-				<span class="track" id="2">
-				The Alter	
+			</div>
+			<div itemprop="tracks" itemscope itemtype="http://www.schema.org/MusicRecording">	
+				<li>
+				<span itemprop="name" class="track" id=""> <!-- id is track number -->
+	
 				</span>	
 				</li>
-				
-				<li> 
-				<span class="track" id="3">
-				Holy Holy	
-				</span>	
-				</li>
-				
-				<li> 
-				<span class="track" id="4">
-				Dog's Eyes	
-				</span>	
-				</li>
-				
-				<li> 
-				<span class="track" id="5">
-				Civilian	
-				</span>	
-				</li>
-				
-				<li> 
-				<span class="track" id="6">
-				Fish	
-				</span>	
-				</li>
-				
-				<li> 
-				<span class="track" id="7">
-				Plains	
-				</span>	
-				</li>
-				
-				<li> 
-				<span class="track" id="8">
-				Hot As Day	
-				</span>	
-				</li>
-				
-				<li> 
-				<span class="track" id="9">
-				We Were Wealth	
-				</span>	
-				</li>
-				
-				<li> 
-				<span class="track" id="10">
-				Doubt	
-				</span>	
-				</li>	
+			</div>
 			</ol>			
+</div>
 </div>
 <!-- Album/Artiste resource Nav links -->
 <p>
